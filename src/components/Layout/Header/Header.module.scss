@@ -1,0 +1,68 @@
+@import "../../../scss/vars";
+
+.header {
+   background-color: $orange;
+   padding: 1rem 2rem;
+   .header_row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+   }
+   .header_logo {
+      font-size: 18px;
+      color: #fff;
+      cursor: pointer;
+
+      span {
+         font-size: 25px;
+         font-weight: bold;
+      }
+   }
+   .header_nav {
+   }
+   .header_list {
+      display: flex;
+      align-items: center;
+      gap: 3.2rem;
+   }
+   .list_item {
+      color: #fff;
+      font-size: 1.7rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      cursor: pointer;
+
+      .cart_icon {
+         font-size: 2.1rem;
+      }
+      span {
+      }
+   }
+
+   .header_btn {
+      .sign_button {
+         border: 2px solid rgb(248, 248, 248);
+         background-color: $orange;
+         border-radius: 0.5rem;
+         min-height: 40px;
+         padding: 0 1.6rem;
+         overflow: hidden;
+
+         &:hover {
+            background-color: #fff;
+
+            & span {
+               color: $orange;
+            }
+         }
+      }
+
+      span {
+         color: #fff;
+         font-size: 1.6rem;
+         font-weight: bold;
+      }
+   }
+}

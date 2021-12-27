@@ -1,0 +1,48 @@
+@import "../../../scss/vars";
+
+.brands {
+   padding: 2rem 0;
+
+   & .brands_list {
+      display: flex;
+      gap: 2rem;
+      position: relative;
+   }
+   & .brands_load {
+   }
+
+   & .brands_item {
+      border: 1px solid $grey_light;
+      box-shadow: 0 0 8px rgba(29, 29, 29, 0.12);
+      border-radius: 0.7rem;
+      padding: 1rem;
+      position: relative;
+
+      &:hover {
+         background-color: $grey_light;
+      }
+
+      & .brands_col {
+         height: 100%;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+      }
+
+      & .item_img {
+         width: 80px;
+
+         & img {
+            max-width: 100%;
+            display: block;
+         }
+      }
+      & .item_name {
+         text-align: center;
+
+         & h3 {
+            font-size: 1.5rem;
+         }
+      }
+   }
+}

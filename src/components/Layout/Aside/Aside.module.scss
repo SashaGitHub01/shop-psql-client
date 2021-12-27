@@ -1,0 +1,40 @@
+@import "../../../scss/vars";
+
+.aside {
+   padding-top: 3rem;
+
+   .nav_col {
+      background-color: #fff;
+      border-radius: 0.8rem;
+      overflow: hidden;
+      border: 1px solid $grey;
+      width: 15rem;
+   }
+   .nav_list {
+      text-align: center;
+   }
+
+   .loader {
+      font-size: 1.6rem;
+      color: $seconary;
+   }
+
+   .nav_item {
+      a {
+         display: block;
+         text-align: center;
+         cursor: pointer;
+         border-bottom: 1px solid $grey;
+         padding: 1.3rem 2.2rem;
+         position: relative;
+      }
+
+      &:hover {
+         background-color: $grey_light;
+      }
+      span {
+         font-size: 1.6rem;
+         color: $seconary;
+      }
+   }
+}

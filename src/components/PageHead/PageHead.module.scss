@@ -1,0 +1,61 @@
+@import "../../scss/vars";
+
+.head {
+   padding: 0 0.5rem 0.4rem 0.5rem;
+   border-bottom: 1px solid $grey;
+   & .head_body {
+      display: flex;
+      align-items: center;
+   }
+   & .back {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      gap: 0.8rem;
+      padding-right: 2.8rem;
+      position: relative;
+
+      &::after {
+         content: "";
+         position: absolute;
+         top: 50%;
+         transform: translateY(-50%) translateX(calc(-1.4rem + 3.5px));
+         right: 0;
+         border-radius: 50%;
+         background-color: $orange;
+         width: 7px;
+         height: 7px;
+      }
+
+      & .arrow_icon {
+         color: $orange;
+         font-size: 2.4rem;
+      }
+      & span {
+         font-size: 1.6rem;
+         color: $seconary;
+      }
+   }
+   & .head_title {
+      font-size: 2.1rem;
+      font-weight: 600;
+      letter-spacing: 0.001rem;
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      & div {
+         margin: 0 0.8rem;
+         border-radius: 50%;
+         background-color: $orange;
+         width: 7px;
+         height: 7px;
+      }
+
+      &:last-child {
+         & div {
+            display: none;
+         }
+      }
+   }
+}
