@@ -1,0 +1,108 @@
+@import "../../../scss/vars";
+
+.item {
+   padding: 1.5rem 1.2rem;
+   border-bottom: 1px solid $grey;
+   position: relative;
+   overflow: hidden;
+
+   &.disabled {
+      position: relative;
+      &::after {
+         content: "";
+         position: absolute;
+         left: 0;
+         top: 0;
+         width: 100%;
+         height: 100%;
+         background-color: rgba(247, 247, 247, 0.432);
+      }
+   }
+
+   &:first-child {
+      border-top: 1px solid $grey;
+   }
+
+   & .item_row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+   }
+   & .item_main {
+      display: flex;
+      flex: 0 1 50%;
+      gap: 1rem;
+   }
+   & .item_img {
+      flex: 0 0 120px;
+      & img {
+         max-width: 100%;
+         display: block;
+      }
+   }
+   & .item_name {
+      & span {
+         font-size: 1.8rem;
+         font-weight: bold;
+      }
+   }
+   & .item_ctrl {
+      border: 1px solid $grey;
+      border-radius: 0.5rem;
+      overflow: hidden;
+   }
+   & .ctrl_row {
+      display: flex;
+      align-items: center;
+   }
+   & .ctrl_btn {
+      padding: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgb(238, 238, 238);
+
+      &:disabled {
+         background-color: $grey_light;
+         pointer-events: none;
+      }
+
+      & .ctrl_icon {
+         font-size: 2.3rem;
+      }
+   }
+   & .ctrl_val {
+      & span {
+         font-size: 1.8rem;
+         font-weight: 300;
+         padding: 0 0.6rem;
+      }
+   }
+   & .plus_i {
+      transform: rotate(-45deg);
+   }
+   & .item_price {
+      font-size: 2rem;
+      & span {
+         font-weight: bold;
+         margin-right: 0.4rem;
+      }
+   }
+   & .item_del {
+      & .del_circle {
+         cursor: pointer;
+         width: 35px;
+         height: 35px;
+         background-color: rgb(247, 49, 49);
+         border-radius: 50%;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+
+         & .del_icon {
+            font-size: 2.4rem;
+            color: #fff;
+         }
+      }
+   }
+}

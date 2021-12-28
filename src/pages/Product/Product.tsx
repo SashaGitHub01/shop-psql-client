@@ -10,13 +10,17 @@ import { IconType } from "react-icons";
 import { v4 } from 'uuid';
 import BigImg from "../../components/Placeholders/BigImg";
 import ProdWindow from "../../components/Placeholders/ProdWindow";
+import { fetchAdd } from "../../store/actionCreators/cartAC";
 
 const Product = () => {
    const [rating, setRating] = useState<IconType[]>([]);
+   const [inCart, setInCart] = useState<boolean>(false);
+
    const dispatch = useAppDispatch();
    const { id } = useParams();
 
    const { product, isLoading, error } = useTypedSelector(state => state.product)
+   const { items, isAdding } = useTypedSelector(state => state.cart)
 
    useEffect(() => {
       if (id) dispatch(fetchProduct(id));
@@ -27,8 +31,24 @@ const Product = () => {
          const rate = getRating(product.rating);
 
          setRating(rate);
+
+         if (items) {
+            const item = items.find(({ itemId }) => {
+               return itemId == product.id
+            })
+
+            if (item) {
+               setInCart(true)
+            } else {
+               setInCart(false)
+            }
+         }
       }
-   }, [product])
+   }, [product, items])
+
+   const handleAddToCart = () => {
+      if (id) dispatch(fetchAdd(id))
+   }
 
    return (
       <div className={s.product}>
@@ -54,8 +74,14 @@ const Product = () => {
                                     <span>{product.price}</span>₽
                                  </div>
                                  <div className={s.price_btn}>
-                                    <button className={s.button}>
-                                       <span>В корзину</span>
+                                    <button
+                                       disabled={inCart}
+                                       className={s.button}
+                                       onClick={handleAddToCart}
+                                    >
+                                       <span>
+                                          {inCart ? 'Товар в корзине' : 'В корзину'}
+                                       </span>
                                     </button>
                                  </div>
                               </div>

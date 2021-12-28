@@ -71,6 +71,11 @@
             padding: 0 1.7rem;
             text-align: center;
 
+            &:disabled {
+               background-color: $orange_dis;
+               pointer-events: none;
+            }
+
             &:hover {
                background-color: $orange_hover;
             }

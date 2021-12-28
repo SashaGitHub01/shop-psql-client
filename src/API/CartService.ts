@@ -23,7 +23,13 @@ export class CartService {
    }
 
    static decr = async (id: string): Promise<ICartItem> => {
-      const res = await instance.put<IResponse<ICartItem>>(`/api/cart/${id}`);
+      const res = await instance.put<IResponse<ICartItem>>(`/api/cart/decr/${id}`);
+
+      return res.data.data
+   }
+
+   static incr = async (id: string): Promise<ICartItem> => {
+      const res = await instance.put<IResponse<ICartItem>>(`/api/cart/incr/${id}`);
 
       return res.data.data
    }
