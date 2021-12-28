@@ -3,7 +3,12 @@
 .header {
    background-color: $orange;
    padding: 1rem 2rem;
+   height: 60px;
+   display: flex;
+   align-items: center;
+
    .header_row {
+      flex: 1 1 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -26,18 +31,30 @@
       gap: 3.2rem;
    }
    .list_item {
-      color: #fff;
-      font-size: 1.7rem;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-      cursor: pointer;
+      & .item_cont {
+         color: #fff;
+         font-size: 1.7rem;
+         font-weight: bold;
+         display: flex;
+         align-items: center;
+         gap: 0.7rem;
+         cursor: pointer;
 
-      .cart_icon {
-         font-size: 2.1rem;
+         .cart_icon {
+            font-size: 2.1rem;
+         }
+         span {
+         }
       }
-      span {
+   }
+
+   & .user_panel {
+      & .user_email {
+         & span {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #fff;
+         }
       }
    }
 

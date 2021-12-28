@@ -1,0 +1,84 @@
+@import "../../scss/vars";
+
+.input_cont {
+   border-radius: 7px;
+   border: 1px solid $grey;
+   padding: 1.7rem 2.5rem 0.7rem 1rem;
+   position: relative;
+
+   &.active {
+      & .placeholder {
+         top: 0;
+         transform: translateY(+0%);
+
+         & span {
+            font-size: 1.3rem;
+            color: $seconary;
+         }
+      }
+   }
+
+   & .placeholder {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: $grey;
+
+      & span {
+         font-size: 1.6rem;
+      }
+   }
+
+   & .input {
+      font-size: 1.6rem;
+      width: 100%;
+   }
+
+   .error {
+      position: absolute;
+      transform: translateY(-50%);
+      top: 50%;
+      right: 0.5rem;
+      z-index: 10;
+
+      & .error_body {
+         position: relative;
+
+         &:hover {
+            .error_msg {
+               display: block;
+            }
+         }
+      }
+
+      & .error_icon {
+         font-size: 2.2rem;
+         color: rgb(255, 66, 66);
+      }
+
+      & .error_msg {
+         display: none;
+         position: absolute;
+         background-color: rgb(255, 199, 199);
+         padding: 1rem;
+         text-align: center;
+         transform: translateY(-50%) translateX(+35%);
+         top: 50%;
+         border-radius: 8px;
+
+         & .angle {
+            border: 10px solid transparent;
+            border-right: 20px solid rgb(255, 199, 199);
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%) translateX(-100%);
+            z-index: 16;
+         }
+
+         & p {
+            font-size: 1.4rem;
+         }
+      }
+   }
+}

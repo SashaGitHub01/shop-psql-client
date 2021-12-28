@@ -22,7 +22,7 @@ export interface ILoginBody {
 }
 
 export interface IRegBody {
-   username: string,
+   email: string,
    password: string,
    role: 'ADMIN' | 'USER'
 }

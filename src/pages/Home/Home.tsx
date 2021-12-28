@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import BrandsList from "../../components/Home/BrandsList/BrandsList";
-import ProductsList from "../../components/Home/ProductsList/ProductsList";
+import ProductsList from "../../components/ProductsList/ProductsList";
 import PageHead from "../../components/PageHead/PageHead";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { useTypedSelector } from "../../hooks/useTypedSelector";

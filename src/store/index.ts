@@ -4,13 +4,15 @@ import { catalogReducer } from "./reducers/catalogSlice";
 import { productReducer } from "./reducers/productSlice";
 import { trandsReducer } from "./reducers/trandsSlice";
 import { typesReducer } from "./reducers/typesSlice";
+import { userReducer } from "./reducers/userSlice";
 
 const rootReducer = combineReducers({
    types: typesReducer,
    brands: brandsReducer,
    trands: trandsReducer,
    catalog: catalogReducer,
-   product: productReducer
+   product: productReducer,
+   user: userReducer
 });
 
 export const setupStore = () => {

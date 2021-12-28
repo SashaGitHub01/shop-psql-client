@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import ProductsList from "../../components/Home/ProductsList/ProductsList";
+import ProductsList from "../../components/ProductsList/ProductsList";
 import PageHead from "../../components/PageHead/PageHead";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
@@ -28,7 +28,7 @@ const Catalog = () => {
 
    return (
       <div className={s.catalog}>
-         <PageHead title="Каталог" back={true} />
+         <PageHead title="Каталог" back={true} to="/" />
          <div className={s.catalog_col}>
             <ProductsList
                items={products.rows}

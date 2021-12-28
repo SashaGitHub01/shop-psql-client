@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
-import { IItem } from "../../../types/IItem";
-import ProductItem from "../../ProductItem/ProductItem";
+import { IItem } from "../../types/IItem";
+import ListSkelet from "../Placeholders/ListSkelet";
+import ProductItem from "../ProductItem/ProductItem";
 import s from './ProductsList.module.scss';
 
 interface IProductsList {
@@ -14,11 +15,13 @@ const ProductsList: React.FC<IProductsList> = ({ items, isLoading }) => {
       <div className={s.products}>
          <div className={s.products_list}>
             {
-               items
-                  ? items.map((item) => (
-                     <ProductItem item={item} key={item.id} />
-                  ))
-                  : null
+               isLoading
+                  ? <ListSkelet />
+                  : items
+                     ? items.map((item) => (
+                        <ProductItem item={item} key={item.id} />
+                     ))
+                     : null
             }
          </div>
       </div>

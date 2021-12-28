@@ -1,0 +1,16 @@
+@import "../../scss/vars";
+
+.home {
+   & .home_col {
+   }
+   & .trands {
+   }
+   & .trands_title {
+      border-bottom: 1px solid $grey;
+      padding-bottom: 0.6rem;
+      & span {
+         font-size: 1.8rem;
+         font-weight: bold;
+      }
+   }
+}

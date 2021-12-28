@@ -10,14 +10,14 @@ interface IProductItem {
 
 const ProductItem: React.FC<IProductItem> = ({ item }) => {
    return (
-      <Link to={`/product/${item.id}`} className={s.item}>
+      <div className={s.item}>
          <div className={s.item_col}>
             <div
                className={s.item_img}
                style={{ backgroundImage: `url(${item.image})` }}
             >
             </div>
-            <div className={s.info}>
+            <Link to={`/product/${item.id}`} className={s.info}>
                <div className={s.info_row}>
                   <div className={s.info_main}>
                      <div className={s.name}>
@@ -36,9 +36,9 @@ const ProductItem: React.FC<IProductItem> = ({ item }) => {
                      </span>₽
                   </div>
                </div>
-            </div>
+            </Link>
          </div>
-      </Link>
+      </div>
    )
 }
 

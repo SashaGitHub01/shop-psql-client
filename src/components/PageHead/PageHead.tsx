@@ -8,10 +8,11 @@ import { IBrand } from "../../types/IBrand";
 
 interface IPageHead {
    title: string,
-   back: boolean
+   back: boolean,
+   to?: string
 }
 
-const PageHead: React.FC<IPageHead> = ({ title, back }) => {
+const PageHead: React.FC<IPageHead> = ({ title, back, to }) => {
    const [brand, setBrand] = useState<IBrand | undefined>(undefined);
    const [type, setType] = useState<IType | undefined>(undefined);
 
@@ -20,6 +21,12 @@ const PageHead: React.FC<IPageHead> = ({ title, back }) => {
 
    const nav = useNavigate();
    const loc = useLocation()
+
+   const handleNav = () => {
+      const path = to || -1;
+
+      nav(path as string)
+   }
 
    useEffect(() => {
       const brand = new URLSearchParams(loc.search).get('brandId');
@@ -33,7 +40,7 @@ const PageHead: React.FC<IPageHead> = ({ title, back }) => {
       <div className={s.head}>
          <div className={s.head_body}>
             {back
-               && <div className={s.back} onClick={() => nav(-1)}>
+               && <div className={s.back} onClick={handleNav}>
                   <ArrowIcon className={s.arrow_icon} />
                   <span>Вернуться</span>
                </div>}
