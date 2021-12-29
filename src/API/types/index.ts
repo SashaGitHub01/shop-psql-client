@@ -1,3 +1,4 @@
+import { ICreateInfo } from "../../types/ICreateInfo"
 
 
 export interface IResponse<T> {
@@ -31,4 +32,13 @@ export interface IQuery {
    brandId: string | null,
    typeId: string | null,
    page: string | null,
+}
+
+export interface ICreateItemBody {
+   brandId: string,
+   typeId: string,
+   price: number,
+   image: File | string,
+   name: string,
+   info?: ICreateInfo[]
 }

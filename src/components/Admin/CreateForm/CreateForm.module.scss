@@ -1,0 +1,163 @@
+@import "../../../scss/vars";
+
+.form {
+   max-height: 80vh;
+   overflow-y: auto;
+
+   & .form_main_col {
+      display: flex;
+      padding: 1.2rem 0;
+      flex-direction: column;
+      gap: 2rem;
+   }
+
+   & .form_head {
+      & span {
+         font-size: 1.6rem;
+         font-weight: bold;
+      }
+   }
+
+   & .submit {
+      width: 100%;
+      min-height: 40px;
+      background-color: $orange;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #fff;
+      border-radius: 7px;
+
+      &:hover {
+         background-color: $orange_hover;
+      }
+
+      &:disabled {
+         background-color: $orange_dis;
+         pointer-events: none;
+      }
+
+      & span {
+      }
+   }
+
+   & .select {
+      padding: 1rem;
+      border: 1px solid $grey;
+      border-radius: 7px;
+      font-size: 1.6rem;
+
+      & option {
+         font-weight: bold;
+      }
+   }
+
+   & .file {
+      display: none;
+   }
+
+   & .add_image {
+      border: 1px solid $grey;
+      padding: 0.7rem 1rem;
+      border-radius: 7px;
+
+      & .label {
+         display: flex;
+         align-items: center;
+         gap: 0.4rem;
+         cursor: pointer;
+
+         & .img_icon {
+            font-size: 2.4rem;
+            color: rgb(255, 104, 17);
+         }
+
+         & span {
+            font-size: 1.4rem;
+            font-weight: 600;
+         }
+      }
+
+      & .image {
+         padding: 0.5rem;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+
+         & img {
+            max-width: 100px;
+            display: block;
+         }
+      }
+   }
+
+   & .form_row {
+      padding: 1.2rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+   }
+
+   & .add_button {
+      background-color: rgb(28, 168, 9);
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      padding: 0.5rem 0;
+      gap: 0.4rem;
+
+      &.disabled {
+         background-color: rgba(28, 168, 9, 0.205);
+         pointer-events: none;
+      }
+
+      & span {
+         font-size: 1.6rem;
+         color: #fff;
+      }
+
+      & .plus_icon {
+         font-size: 2.2rem;
+         color: #fff;
+         transform: rotate(45deg);
+      }
+   }
+
+   .info_col {
+      display: flex;
+      flex-direction: column;
+      gap: 1.3rem;
+      padding: 1.5rem 0;
+
+      .info_item {
+         font-size: 1.4rem;
+         display: flex;
+         align-items: center;
+         gap: 0.8rem;
+         .item_title {
+            font-weight: bold;
+            span {
+            }
+         }
+         .info_descr {
+            span {
+            }
+         }
+         .del_item {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(255, 20, 20);
+            .del_icon {
+               color: rgb(255, 255, 255);
+               font-size: 2rem;
+               cursor: pointer;
+            }
+         }
+      }
+   }
+}

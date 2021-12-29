@@ -6,12 +6,13 @@ import Modal from "../../../UI/Modal/Modal";
 import SignInForm from "../../SignModal/SignInForm/SignInForm";
 import { useTypedSelector } from "../../../hooks/useTypedSelector";
 import SignModal from "../../SignModal/SignModal";
+import UserPanel from "./UserPanel/UserPanel";
 
 const Header = () => {
    const [isActive, setIsActive] = useState<boolean>(false);
    const nav = useNavigate();
 
-   const { user, isAuth } = useTypedSelector(state => state.user)
+   const isAuth = useTypedSelector(state => state.user.isAuth)
 
    const handleClose = () => {
       setIsActive(false)
@@ -50,17 +51,7 @@ const Header = () => {
                      </div>
                   </li>
                   <li className={s.header_btn}>
-                     {user
-                        ? <div className={s.user_panel}>
-                           <div className={s.user_email}>
-                              <span>
-                                 {user.email}
-                              </span>
-                           </div>
-                        </div>
-                        : <button className={s.sign_button} onClick={handleOpen}>
-                           <span>Войти</span>
-                        </button>}
+                     <UserPanel handleOpen={handleOpen} />
                   </li>
                </ul>
             </div>

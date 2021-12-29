@@ -1,4 +1,5 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { adminReducer } from "./reducers/admin";
 import { brandsReducer } from "./reducers/brandsSlice";
 import { cartReducer } from "./reducers/cartSlice";
 import { catalogReducer } from "./reducers/catalogSlice";
@@ -14,7 +15,8 @@ const rootReducer = combineReducers({
    catalog: catalogReducer,
    product: productReducer,
    user: userReducer,
-   cart: cartReducer
+   cart: cartReducer,
+   admin: adminReducer
 });
 
 export const setupStore = () => {

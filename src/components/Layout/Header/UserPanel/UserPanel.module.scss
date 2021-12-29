@@ -1,0 +1,91 @@
+@import "../../../../scss/vars";
+
+.user_panel {
+   position: relative;
+   & .user_email {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      & span {
+         font-size: 1.8rem;
+         font-weight: bold;
+         color: #fff;
+      }
+   }
+
+   & .open_btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+
+   & .tri_icon {
+      color: #fff;
+      font-size: 1.8rem;
+      cursor: pointer;
+      transition: 0.4s ease transform;
+
+      &.active {
+         transform: rotate(180deg);
+      }
+   }
+
+   & .popup {
+      width: 100%;
+      position: absolute;
+      background-color: #fff;
+      border: 1px solid $grey;
+      border-radius: 5px;
+
+      & .list {
+      }
+      & .list_item {
+         display: flex;
+         align-items: center;
+         gap: 0.4rem;
+         border-bottom: 1px solid $grey;
+         padding: 0.5rem;
+         cursor: pointer;
+
+         &:hover {
+            background-color: $grey_light;
+         }
+
+         & .crown_icon {
+            font-size: 2rem;
+            color: rgb(255, 196, 0);
+         }
+         & span {
+            font-size: 1.6rem;
+         }
+         & .logout_icon {
+            font-size: 2rem;
+            color: rgb(160, 15, 15);
+         }
+      }
+   }
+}
+
+.sign_button {
+   border: 2px solid rgb(248, 248, 248);
+   background-color: $orange;
+   border-radius: 0.5rem;
+   min-height: 40px;
+   padding: 0 1.6rem;
+   overflow: hidden;
+
+   &:hover {
+      background-color: #fff;
+
+      & span {
+         color: $orange;
+      }
+   }
+
+   span {
+      color: #fff;
+      font-size: 1.6rem;
+      font-weight: bold;
+   }
+}

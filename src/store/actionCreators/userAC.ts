@@ -16,6 +16,19 @@ export const fetchAuth = createAsyncThunk(
    }
 )
 
+export const fetchLogout = createAsyncThunk(
+   'user/fetchLogout',
+   async (_, thunk) => {
+      try {
+         await AuthService.logout();
+
+         return null;
+      } catch (err) {
+         return thunk.rejectWithValue('Ошибка')
+      }
+   }
+)
+
 export const fetchSignIn = createAsyncThunk(
    'user/fetchSignin',
    async (data: ILoginBody, thunk) => {

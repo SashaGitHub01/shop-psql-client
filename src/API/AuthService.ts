@@ -15,6 +15,12 @@ export class AuthService {
       return res.data.data
    }
 
+   static logout = async (): Promise<any> => {
+      const res = await instance.get<any>('/api/user/logout');
+
+      return res.data;
+   }
+
    static reg = async (body: IRegBody): Promise<IUser> => {
       const res = await instance.post<IResponse<IUser>>('/api/user/registration', body);
 

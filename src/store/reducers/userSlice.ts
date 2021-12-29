@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { IUser } from "../../types/IUser";
 import { IStateUser } from "../../types/user";
-import { fetchAuth, fetchSignIn, fetchSignUp } from "../actionCreators/userAC";
+import { fetchAuth, fetchLogout, fetchSignIn, fetchSignUp } from "../actionCreators/userAC";
 
 const initialState: IStateUser = {
    user: null,
@@ -30,6 +30,17 @@ export const userSlice = createSlice({
 
       [fetchAuth.rejected.type]: (state, action: PayloadAction<string>) => {
          state.isLoading = false;
+         state.error = action.payload
+      },
+
+      //logout
+      [fetchLogout.pending.type]: (state, action: PayloadAction<any>) => {
+         state.isAuth = false;
+         state.user = null;
+         state.error = null
+      },
+
+      [fetchLogout.rejected.type]: (state, action: PayloadAction<string>) => {
          state.error = action.payload
       },
 

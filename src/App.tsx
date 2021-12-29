@@ -11,6 +11,7 @@ import { fetchAuth } from './store/actionCreators/userAC';
 import { useTypedSelector } from './hooks/useTypedSelector';
 import { fetchCart } from './store/actionCreators/cartAC';
 import Cart from './pages/Cart/Cart';
+import Admin from './pages/Admin/Admin';
 
 function App() {
    const dispatch = useDispatch();
@@ -33,6 +34,7 @@ function App() {
             : <Layout>
                <Routes>
                   <Route path={'/'} element={<Home />} />
+                  <Route path={'/admin'} element={<Admin />} />
                   <Route path={'/catalog'} element={<Catalog />} />
                   <Route path={'/cart'} element={<Cart />} />
                   <Route path={'/product/:id'} element={<Product />} />

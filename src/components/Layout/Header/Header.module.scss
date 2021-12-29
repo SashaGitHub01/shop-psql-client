@@ -47,39 +47,4 @@
          }
       }
    }
-
-   & .user_panel {
-      & .user_email {
-         & span {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #fff;
-         }
-      }
-   }
-
-   .header_btn {
-      .sign_button {
-         border: 2px solid rgb(248, 248, 248);
-         background-color: $orange;
-         border-radius: 0.5rem;
-         min-height: 40px;
-         padding: 0 1.6rem;
-         overflow: hidden;
-
-         &:hover {
-            background-color: #fff;
-
-            & span {
-               color: $orange;
-            }
-         }
-      }
-
-      span {
-         color: #fff;
-         font-size: 1.6rem;
-         font-weight: bold;
-      }
-   }
 }

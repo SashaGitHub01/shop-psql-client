@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useRef, useState } from "react";
+import React, { ChangeEvent, useRef, useState, useEffect } from "react";
 import { InfoIcon } from "../../assets/icons";
 import s from './MyInput.module.scss';
 
@@ -20,6 +20,12 @@ const MyInput: React.FC<IMyInput> = ({
    const [isEmpty, setIsEmpty] = useState<boolean>(true);
 
    const ref = useRef<HTMLInputElement>(null)
+
+   useEffect(() => {
+      if (String(value)) {
+         setIsEmpty(false)
+      }
+   }, [])
 
    const handleFocus = () => {
       if (ref.current) {
