@@ -31,7 +31,8 @@ export interface IRegBody {
 export interface IQuery {
    brandId: string | null,
    typeId: string | null,
-   page: string | null,
+   page: number | null,
+   limit?: number
 }
 
 export interface ICreateItemBody {

@@ -23,7 +23,7 @@ const Aside = () => {
                   : types
                      ? types.map(({ id, name }) => (
                         <li className={s.nav_item} key={id}>
-                           <Link to={`/catalog?typeId=${id}`}>
+                           <Link to={`/catalog?typeId=${id}&page=1`}>
                               <span>{name}</span>
                            </Link>
                         </li>

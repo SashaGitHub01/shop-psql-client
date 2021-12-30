@@ -14,7 +14,7 @@ export class ItemsService {
 
    static getItems = async (query: IQuery): Promise<ICountData<IItem[]>> => {
       const res = await instance.get<IPageResponse<IItem[]>>(
-         `/api/items?brandId=${query.brandId || ''}&typeId=${query.typeId || ''}&page=${query.page || 1}`
+         `/api/items?brandId=${query.brandId || ''}&typeId=${query.typeId || ''}&limit=${query.limit}&page=${query.page || 1}`
       );
 
       return res.data.data
