@@ -2,6 +2,8 @@
 
 .user_panel {
    position: relative;
+   z-index: 1111;
+
    & .user_email {
       display: flex;
       align-items: center;

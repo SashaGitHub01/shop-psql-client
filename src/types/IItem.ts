@@ -5,5 +5,6 @@ export interface IItem {
    brandId: number,
    price: number,
    rating: number,
-   image: string
+   image: string,
+   createdAt: Date
 }

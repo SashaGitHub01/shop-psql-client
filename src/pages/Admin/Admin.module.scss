@@ -6,31 +6,46 @@
    & .create {
    }
    & .create_section {
+   }
+
+   & .add_row {
       padding: 2.5rem;
       display: flex;
       align-items: center;
       justify-content: center;
-   }
-   & .create_button {
-      background-color: $orange;
-      color: #fff;
-      font-size: 1.8rem;
-      border-radius: 7px;
-      font-weight: bold;
-      padding: 0 1.6rem;
-      min-height: 40px;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
 
-      &:hover {
-         background-color: $orange_hover;
+      & .create_button {
+         background-color: $orange;
+         color: #fff;
+         font-size: 1.8rem;
+         border-radius: 7px;
+         font-weight: bold;
+         padding: 0 1.6rem;
+         min-height: 40px;
+         display: flex;
+         align-items: center;
+         gap: 0.4rem;
+
+         &:hover {
+            background-color: $orange_hover;
+         }
+         & .plus_icon {
+            font-size: 2.2rem;
+            transform: rotate(45deg);
+         }
+         & span {
+         }
       }
-      & .plus_icon {
-         font-size: 2.2rem;
-         transform: rotate(45deg);
-      }
-      & span {
+   }
+
+   & .history {
+      & .history_head {
+         padding: 0.5rem 0;
+
+         & span {
+            font-size: 1.8rem;
+            font-weight: bold;
+         }
       }
    }
 }

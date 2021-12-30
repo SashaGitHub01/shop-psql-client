@@ -101,7 +101,7 @@ html {
    display: flex;
    flex-direction: column;
    background-color: rgb(247, 247, 247);
-   overflow: hidden;
+   overflow-x: hidden;
 }
 
 .main_row {
@@ -109,10 +109,13 @@ html {
    gap: 3rem;
    padding: 1.5rem 1.5rem 1rem 2rem;
    flex: 1 1 auto;
+   position: relative;
 
    & .main {
       padding: 1.5rem;
       flex: 1 1 auto;
       background-color: #fff;
+      position: relative;
+      overflow-x: hidden;
    }
 }

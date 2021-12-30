@@ -16,7 +16,7 @@ import Admin from './pages/Admin/Admin';
 function App() {
    const dispatch = useDispatch();
 
-   const { isLoading, isAuth } = useTypedSelector(state => state.user);
+   const { isLoading, isAuth, isInitialized } = useTypedSelector(state => state.user);
 
    useEffect(() => {
       dispatch(fetchAuth());
@@ -29,7 +29,7 @@ function App() {
 
    return (
       <>
-         {isLoading
+         {isLoading || !isInitialized
             ? <Loader />
             : <Layout>
                <Routes>

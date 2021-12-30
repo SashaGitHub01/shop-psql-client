@@ -5,5 +5,6 @@ export interface IStateUser {
    isLoading: boolean,
    isLogin: boolean,
    error: string | null,
-   isAuth: boolean
+   isAuth: boolean,
+   isInitialized: boolean
 }

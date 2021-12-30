@@ -1,0 +1,94 @@
+@import "../../../scss/vars";
+
+.list {
+   position: relative;
+   overflow-x: hidden;
+
+   & .slide_btn {
+      position: absolute;
+      transform: translateY(-50%);
+      top: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      height: 100%;
+      opacity: 0.35;
+      border-radius: 8px;
+
+      &:hover {
+         opacity: 1;
+         background-color: rgba(255, 255, 255, 0.63);
+      }
+
+      &.arrow_right {
+         right: 0px;
+         transform: translateY(-50%);
+
+         & .arrow_icon {
+            transform: rotate(180deg);
+         }
+      }
+
+      & .arrow_icon {
+         font-size: 4rem;
+         color: $orange;
+      }
+   }
+
+   & .item {
+      flex: 0 0 17rem;
+      cursor: pointer;
+      border: 1px solid $grey;
+      max-width: 170px;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      display: flex !important;
+      flex-direction: column;
+
+      &:hover {
+         background-color: $grey_light;
+      }
+   }
+
+   & .item_content {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+   }
+
+   & .item_img {
+      width: 100px;
+      margin: 0 auto;
+      padding: 0.5rem 0;
+      flex: 1 1 auto;
+      display: flex;
+      align-items: center;
+
+      & img {
+         max-width: 100%;
+         display: block;
+      }
+   }
+   & .item_footer {
+      padding: 0.5rem;
+      font-size: 1.4rem;
+   }
+   & .item_name {
+      font-weight: bold;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      & span {
+      }
+   }
+   & .item_date {
+      & span {
+         color: $seconary;
+         font-weight: 600;
+      }
+   }
+}

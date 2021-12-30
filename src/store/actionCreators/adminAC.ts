@@ -24,3 +24,16 @@ export const fetchCreateItem = createAsyncThunk(
       }
    }
 )
+
+export const fetchHistory = createAsyncThunk(
+   'admin/fetchHistory',
+   async (_, thunk) => {
+      try {
+         const res = await ItemsService.getHistory();
+
+         return res;
+      } catch (err) {
+         return thunk.rejectWithValue('Ошибка')
+      }
+   }
+)

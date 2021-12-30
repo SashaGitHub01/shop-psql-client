@@ -6,6 +6,7 @@ import { fetchAuth, fetchLogout, fetchSignIn, fetchSignUp } from "../actionCreat
 const initialState: IStateUser = {
    user: null,
    isAuth: false,
+   isInitialized: false,
    isLoading: false,
    isLogin: false,
    error: null
@@ -25,12 +26,14 @@ export const userSlice = createSlice({
          state.isLoading = false;
          state.isAuth = true;
          state.user = action.payload;
-         state.error = null
+         state.error = null;
+         state.isInitialized = true;
       },
 
       [fetchAuth.rejected.type]: (state, action: PayloadAction<string>) => {
          state.isLoading = false;
-         state.error = action.payload
+         state.error = action.payload;
+         state.isInitialized = true;
       },
 
       //logout

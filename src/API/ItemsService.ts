@@ -31,4 +31,10 @@ export class ItemsService {
 
       return res.data.data
    }
+
+   static getHistory = async (): Promise<IItem[]> => {
+      const res = await instance.get<IResponse<IItem[]>>(`/api/items/history`);
+
+      return res.data.data
+   }
 }
