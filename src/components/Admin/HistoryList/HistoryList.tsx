@@ -41,7 +41,7 @@ const HistoryList: React.FC<IHistoryList> = ({ items, isLoading }) => {
                         <div className={s.item_img}>
                            <img src={image} alt="img" />
                         </div>
-                        <div className={s.item_footer}>
+                        <Link className={s.item_footer} to={`/product/${id}`}>
                            <div className={s.item_name}>
                               <span>{name}</span>
                            </div>
@@ -50,7 +50,7 @@ const HistoryList: React.FC<IHistoryList> = ({ items, isLoading }) => {
                                  {new Date(createdAt).toLocaleDateString()}
                               </span>
                            </div>
-                        </div>
+                        </Link>
                      </div>
                   </div>
                ))
